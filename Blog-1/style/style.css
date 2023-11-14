@@ -13,6 +13,10 @@ body {
     margin: 0;
 }
 
+nav {
+    position: relative;
+}
+
 nav ul {
     margin: 81px 0 80px 0;
     list-style: none;
@@ -21,12 +25,25 @@ nav ul {
    
 }
 
+nav ul button {
+    background-color: #4B5563;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border: none;
+    
+}
+
 nav ul li {
     display: inline-block;
 }
 
 nav ul li:nth-child(1){
-    margin: 0 0 0 192px;
+    margin: 0 0 0 180px ;
 }
 nav ul li:nth-child(2){
     margin: 0 77px 0 23px;
@@ -40,11 +57,12 @@ nav ul li:nth-child(4){
     margin: 0 39px 0 0;
 }
 
+
 nav form {
-    display: inline-block;
     position: absolute;
     right: 180px;
     top: 71px;
+  
     
 }
 
@@ -69,12 +87,11 @@ nav input::placeholder {
 }
 
 nav form>label>img {
-    display: inline-block;
+   position: absolute;
     width: 14px;
     height: 14px;
     padding: 14px 17px 12px 18px;
-    position: absolute;
-
+    
 }
 
 h1 , p {
@@ -128,9 +145,22 @@ section, main>p {
     text-align: center;
 }
 
-section div {
+.mainTopic {
     width: 708px;
     margin: auto;
+}
+
+.adressLabel {
+    display: inline-block;
+    margin: 0 6px;
+
+
+}
+
+.adressLabel label {
+    display: block;
+    text-align: start;
+
 }
 
 .mainContent {
@@ -146,6 +176,10 @@ section div {
     font-size: 16px;
 }
 
+.mainContent:nth-child(3){
+    margin: 0 0 100px;
+}
+
 footer p {
 
     color: #ABAFB5;
@@ -153,6 +187,8 @@ footer p {
     font-weight: 400;
     line-height: 28px;
     text-align: center;
+    margin: 0 0 77px;
+
     
 }
 
