@@ -1,0 +1,195 @@
+nav a {
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+body {
+    background: linear-gradient(#374151, #111827);
+    margin: 0;
+}
+
+nav {
+    position: relative;
+    padding: 81px 0 80px 0;
+}
+
+nav ul {
+    list-style: none;
+    position: relative;
+    margin: 0;
+   
+}
+
+nav ul button {
+    background-color: #4B5563;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border: none;
+    
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li:nth-child(1){
+    margin: 0 0 0 180px ;
+}
+nav ul li:nth-child(2){
+    margin: 0 77px 0 23px;
+}
+
+nav ul li:nth-child(3){
+    margin: 0 52px 0 0;
+}
+
+nav ul li:nth-child(4){
+    margin: 0 39px 0 0;
+}
+
+
+nav form {
+    position: absolute;
+    right: 180px;
+    top: 71px;
+  
+    
+}
+
+nav input {
+    color: #FFFFFF;
+    background-color: rgba(31, 41, 55, 0.6);
+    border-radius: 100px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 224px;
+    border-style: none;
+    font-size: 16px;
+    padding-left: 49px;
+    
+}
+
+nav input::placeholder {
+    color: #ABAFB5;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+}
+
+nav form>label>img {
+   position: absolute;
+    width: 14px;
+    height: 14px;
+    padding: 14px 17px 12px 18px;
+    
+}
+
+h1 , p {
+    color: #FFFFFF;
+}
+
+main > p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    opacity: 60%;
+    margin: 0 0 14px;
+}
+main h1 {
+
+    margin:0 0 30px;
+}
+
+main address {
+    margin: 0 0 28px;
+}
+main section>img {
+    margin: 0 0 69px;
+}
+
+label.developerName {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #FFFFFF;
+    font-style: normal;
+
+}
+
+label.developer {
+    color: #ABAFB5;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    font-style: normal;
+
+}
+
+.link{
+    color: #FFFFFF;
+    text-decoration-line: underline;
+    
+}
+
+section, main>p {
+    text-align: center;
+}
+
+.mainTopic {
+    max-width: 708px;
+    margin: auto;
+}
+
+.addressLabel {
+    display: inline-block;
+    margin: 0 6px;
+
+
+}
+
+.addressLabel label {
+    display: block;
+    text-align: start;
+
+}
+
+.mainContent {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px; 
+    text-align: justify;
+
+}
+
+.mainContent:not(.mainContent:nth-child(1)){
+    font-size: 16px;
+}
+
+.mainContent:nth-child(3){
+    margin: 0 0 100px;
+}
+
+
+
+footer p {
+    color: #ABAFB5;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    margin: 0 0 77px;
+
+    
+}
+
