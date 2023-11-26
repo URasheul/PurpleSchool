@@ -1,15 +1,60 @@
+body{
+    background-color:#F39494;
+    background-image: linear-gradient(243deg, #FDC5C5 25.45%, rgba(242, 152, 222, 0.00) 100%);
+}
+
+form {
+    box-sizing: border-box;
+    background-color: #FFFEFE;
+    width: 582px;
+    height: 573px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: calc(100vh / 4) auto;
+    padding: 72px 0 91px 0;
+    
+}
+
 h1 {
+    
     color: #333333;
+    width: 383px;
+    height: 54px;
+    text-align: center;
     font-size: 36px;
     font-weight: 700;
-    line-height: 49.03px;
+    line-height: normal;
+    margin: 0 106px 0 93px; 
+
+}
+
+form>div:nth-child(2) {
+    box-sizing: border-box;
+    text-align: center;   
+    margin: 0 173px 47px 172px;
+    width: 237px;
+    height: 26px;
+
 }
 
 p {
+    display: inline-block;
     color: #666666;
     font-size: 18px;
     font-weight: 400;
-    line-height: 24.51px;
+    line-height: normal;
+    margin: 0 6px 0 0;
+
+}
+
+
+
+
+.mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    row-gap: 22px;
 }
 
 #enterRef{
@@ -42,26 +87,72 @@ button {
     line-height: 24.51px;
     background-color: #089FE0;
     border-style: hidden;
+    width: 394px;
+    height: 44px;
+    border-radius: 5px;
+    
 }
 
 [name ="userName"],[name ="userSurname"], [name ="userEmail"] {
+    box-sizing: border-box;
     background-color: #F5F5F5;
     color: #999999;
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
+    padding: 0 0 0 11px;
     line-height: 21.79px;
-    border-style: hidden;
+    border-style: none;
 }
 
 [name = "userCompany"] {
+    box-sizing: border-box;
     background-color: #FFFFFF;
     color: #333333;
     font-size: 16px;
     font-weight: 600;
     line-height: 21.79px;
+    padding: 0 0 0 11px;
     border-color: #F5F5F5;
     border-width: 1px;
     border-style: solid;
+    width: 394px;
+    height: 44px;
+    border-radius: 5px;
+    border: 1px solid #F5F5F5;
+    background: #FFF;
+    
+
         
+}
+
+[name ="userEmail"] {
+    width: 394px;
+    height: 44px;
+    border-radius: 5px;
+   
+}
+
+.userId {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 394px;
+    height: 44px;    
+    justify-content: center;
+    column-gap: 1px;
+}
+
+[name ="userName"] {
+    width: calc(100% / 2 - calc(1px / 2));
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+[name ="userSurname"] {
+    width: calc(100% / 2 - calc(1px / 2));
+    height: 100%;
+    border-radius:  0 5px 5px 0;
+
 }

@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/2-Form/style.css">
+    <link rel="stylesheet" href="/style.css">
     <title>Register</title>
 </head>
     <body>
         <main>
-            <h1>Регистрация</h1>
             <form action="#">
-            <p>Уже есть аккаунт? <a href="#" id="enterRef">Войти</a></p>
-            <div>
-                <input type="text" name="userCompany" value="Моя компания" />
-            </div>
-            <div>
-                <input type="text" name="userName" placeholder="Имя" required>
-                <input type="text" name="userSurname" placeholder="Фамилия" required>
-            </div>
-            <div>
-                <input type="email" name="userEmail" placeholder="E-mail" required>
-            </div>
-            <div>
-                <button type="submit">Зарегистрироваться&emsp;&xrarr;</button>
-            </div>
-            <div>
-                <input type="checkbox" name="userTerms" id="checkTerms" required>
-                <label for="checkTerms">Я прочитал и принимаю
-                    <a href="#" id="checkTermsRef">Условия использования</a></label>
+                <h1>Регистрация</h1>
+                <div>
+                    <p>Уже есть аккаунт?</p><a href="#" id="enterRef">Войти</a>                    
+                </div>
+                    <div class="mainContent">
+                    <input type="text" name="userCompany" value="Моя компания" />
+
+                    <div class="userId">
+                        <input type="text" name="userName" placeholder="Имя" required>
+                        <input type="text" name="userSurname" placeholder="Фамилия" required>
+                    </div>
+
+                    <input type="email" name="userEmail" placeholder="E-mail" required>
+                    <button type="submit">Зарегистрироваться&emsp;&xrarr;</button>
+
+                    <div class="userTerms">
+                        <input type="checkbox" name="userTerms" id="checkTerms" required>
+                        <label for="checkTerms">Я прочитал и принимаю
+                        <a href="#" id="checkTermsRef">Условия использования</a></label>
+                    </div>
+                    
                 </div>
             </form>
         </main>
