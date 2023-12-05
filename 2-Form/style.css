@@ -1,12 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
+    font-family: 'Open Sans', sans-serif;
     background-color:#F39494;
     background-image: linear-gradient(243deg, #FDC5C5 25.45%, rgba(242, 152, 222, 0.00) 100%);
 }
 
+
 form {
-    box-sizing: border-box;
     background-color: #FFFEFE;
-    width: 582px;
+    max-width: 582px;
     height: 573px;
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -18,7 +23,6 @@ form {
 h1 {
     
     color: #333333;
-    width: 383px;
     height: 54px;
     text-align: center;
     font-size: 36px;
@@ -28,16 +32,18 @@ h1 {
 
 }
 
-form>div:nth-child(2) {
+.account-login {
     box-sizing: border-box;
     text-align: center;   
-    margin: 0 173px 47px 172px;
-    width: 237px;
+    margin: 0 auto 47px;
+    max-width: 237px;
     height: 26px;
 
 }
 
+
 p {
+    
     display: inline-block;
     color: #666666;
     font-size: 18px;
@@ -48,12 +54,12 @@ p {
 }
 
 
-
-
 .mainContent {
     display: flex;
     flex-direction: column;
+    max-width: 394px;
     align-items:center;
+    margin: 0 auto;
     row-gap: 22px;
 }
 
@@ -87,26 +93,26 @@ button {
     line-height: 24.51px;
     background-color: #089FE0;
     border-style: hidden;
-    width: 394px;
+    width: 100%;
     height: 44px;
     border-radius: 5px;
     
 }
 
 [name ="userName"],[name ="userSurname"], [name ="userEmail"] {
-    box-sizing: border-box;
+    
     background-color: #F5F5F5;
     color: #999999;
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
-    padding: 0 0 0 11px;
+    padding-left: 11px;
     line-height: 21.79px;
     border-style: none;
 }
 
 [name = "userCompany"] {
-    box-sizing: border-box;
+    
     background-color: #FFFFFF;
     color: #333333;
     font-size: 16px;
@@ -116,7 +122,7 @@ button {
     border-color: #F5F5F5;
     border-width: 1px;
     border-style: solid;
-    width: 394px;
+    width: 100%;
     height: 44px;
     border-radius: 5px;
     border: 1px solid #F5F5F5;
@@ -127,7 +133,7 @@ button {
 }
 
 [name ="userEmail"] {
-    width: 394px;
+    width: 100%;
     height: 44px;
     border-radius: 5px;
    
@@ -137,8 +143,7 @@ button {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    width: 394px;
+    width: 100%;
     height: 44px;    
     justify-content: center;
     column-gap: 1px;
