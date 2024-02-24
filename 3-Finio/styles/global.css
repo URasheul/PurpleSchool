@@ -1,0 +1,37 @@
+html {
+    --color-bg: #FFF;
+    --color-primary:#357EFE;
+    --color-text:#000;
+    --color-text-shadow:#4E5D7C80;
+    --color-discount:#1ABC9C;
+    --color-discount-currency:#FFC736;
+    --color-navigation-shadow: rgba(255, 255, 255, 0.80);
+    --color-line: rgba(78, 93, 124, 0.08);
+    --color-footer-line: rgba(255, 255, 255, 0.08);
+    --color-footer: #1A1D25;
+
+    --border-47: 47px;
+    --border-34: 34px;
+    --border-16: 16px;
+    --border-10: 10px;
+    --border-8: 8px;
+
+}
+
+body {    
+    margin: 0 ;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+section {
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3 {
+    margin: 0;
+}
