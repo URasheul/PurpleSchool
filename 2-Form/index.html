@@ -6,31 +6,31 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <title>Register</title>
 </head>
     <body>
         <main>
-            <form action="#">
-                <h1>Регистрация</h1>
+            <form class="form" action="#">
+                <h1 class="form__title">Регистрация</h1>
                 <div class="account-login">
-                    <p>Уже есть аккаунт?</p><a href="#" id="enterRef">Войти</a>                    
+                    <h3 class="account-login__subTitle">Уже есть аккаунт?</h3><a href="#" class="ref ref_enterRef" >Войти</a>                    
                 </div>
                     <div class="mainContent">
-                    <input type="text" name="userCompany" value="Моя компания" />
+                    <input type="text" class ="mainContent__userCompany" value="Моя компания" />
 
                     <div class="userId">
-                        <input type="text" name="userName" placeholder="Имя" required>
-                        <input type="text" name="userSurname" placeholder="Фамилия" required>
+                        <input type="text" class ="input mainContent__userName" name="userName" placeholder="Имя" required>
+                        <input type="text" class ="input mainContent__userSurname" name="userSurname" placeholder="Фамилия" required>
                     </div>
 
-                    <input type="email" name="userEmail" placeholder="E-mail" required>
-                    <button type="submit">Зарегистрироваться&emsp;&xrarr;</button>
+                    <input type="email" class ="input mainContent__userEmail" name="userEmail" placeholder="E-mail" required>
+                    <button class="button" type="submit">Зарегистрироваться&emsp;&xrarr;</button>
 
                     <div class="userTerms">
                         <input type="checkbox" name="userTerms" id="checkTerms" required>
                         <label for="checkTerms">Я прочитал и принимаю
-                        <a href="#" id="checkTermsRef">Условия использования</a></label>
+                        <a href="#" class="ref ref_checkTerms" >Условия использования</a></label>
                     </div>
                     
                 </div>

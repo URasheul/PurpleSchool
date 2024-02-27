@@ -32,6 +32,7 @@ section {
     box-sizing: border-box;
 }
 
-p, h1, h2, h3 {
+p, h1, h2, h3, a {
     margin: 0;
+    text-decoration: none;
 }

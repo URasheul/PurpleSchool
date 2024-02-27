@@ -9,6 +9,11 @@ header, main {
     max-width: 1440px;
     margin: 0 auto;
 }
+
+section {
+    text-align: center;
+}
+
 nav a {
 
     font-size: 18px;
@@ -17,6 +22,37 @@ nav a {
     color: #ffffff;
     text-decoration: none;
 }
+
+h1 , p {
+    color: #FFFFFF;
+}
+
+main > p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    opacity: 60%;
+    margin: 0 0 14px;
+}
+
+main h1 {
+    width: 525px;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 38px;
+    margin:0 auto 30px;
+
+}
+
+main address {
+    margin: 0 0 28px;
+}
+main section>img {
+    margin: 0 0 69px;
+}
+
 
 
 
@@ -95,35 +131,6 @@ nav a {
 
 
 
-h1 , p {
-    color: #FFFFFF;
-}
-
-main > p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.41px;
-    opacity: 60%;
-    margin: 0 0 14px;
-}
-
-main h1 {
-    width: 525px;
-    text-align: center;
-    font-family: 'Roboto';
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 38px;
-    margin:0 auto 30px;
-
-}
-
-main address {
-    margin: 0 0 28px;
-}
-main section>img {
-    margin: 0 0 69px;
-}
 
 .text-author {
 
@@ -186,9 +193,6 @@ main section>img {
 
 }
 
-section {
-    text-align: center;
-}
 
 .mainTopic {
     max-width: 708px;

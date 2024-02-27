@@ -108,6 +108,10 @@
     opacity: 0.5;
 }
 
+.paragraph__footer_5:hover {    
+    opacity: 0.7;
+}
+
 .paragraph__footer_7 {
     color: var(--color-bg);
     opacity: 0.7;

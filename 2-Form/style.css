@@ -1,28 +1,40 @@
 * {
     box-sizing: border-box;
+    --color-bg : #F39494;
+    --color-bg-form : #FFFEFE;
+    --color-button : #089FE0;
+    --color-button-hover : #1087ba;
+    --color-button-text : #FFFFFF;
+    --color-placeholder: #999999;
+    --color-input-bg : #F5F5F5;
+    --color-text : #333333;
+    --color-text-shadow : #666666;
 }
 
 body{
     font-family: 'Open Sans', sans-serif;
-    background-color:#F39494;
+    background-color:var(--color-bg);
     background-image: linear-gradient(243deg, #FDC5C5 25.45%, rgba(242, 152, 222, 0.00) 100%);
+    font-weight: 400;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 
-form {
-    background-color: #FFFEFE;
-    max-width: 582px;
-    height: 573px;
+.form {
+    background-color: var(--color-bg-form);
     border-radius: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    margin: calc(100vh / 4) auto;
-    padding: 72px 0 91px 0;
+    padding: 72px 94px 91px;
     
 }
 
-h1 {
+.form__title {
     
-    color: #333333;
+    color: var(--color-text);
     height: 54px;
     text-align: center;
     font-size: 36px;
@@ -33,19 +45,19 @@ h1 {
 }
 
 .account-login {
-    box-sizing: border-box;
-    text-align: center;   
-    margin: 0 auto 47px;
-    max-width: 237px;
-    height: 26px;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 47px;
+
+   
 
 }
 
 
-p {
+.account-login__subTitle {
     
     display: inline-block;
-    color: #666666;
+    color: var(--color-text-shadow);
     font-size: 18px;
     font-weight: 400;
     line-height: normal;
@@ -63,76 +75,80 @@ p {
     row-gap: 22px;
 }
 
-#enterRef{
-    color: #089FE0;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24.51px;
 
+.ref {
+    color: var(--color-button);
 }
 
-#checkTermsRef {
-    color: #089FE0;
+.ref:hover {
+    color: var(--color-button-hover);
+}
+
+.ref_enterRef{    
+    font-size: 18px;    
+    line-height: 24.51px;
+}
+
+.ref_checkTerms {
+    
     font-size: 14px;
-    font-weight: 400;
     line-height: 19.07px;
 }
 
 label {
 
-    color: #666666;
+    color: var(--color-text-shadow);
     font-size: 14px;
-    font-weight: 400;
     line-height: 19.07px;
 }
 
-button {
-    color: #FFFFFF;
+.button {
+    color: var(--color-button-text);
     font-size: 18px;
-    font-weight: 400;
     line-height: 24.51px;
-    background-color: #089FE0;
+    background-color: var(--color-button);
     border-style: hidden;
     width: 100%;
     height: 44px;
     border-radius: 5px;
+    cursor: pointer;
     
 }
 
-[name ="userName"],[name ="userSurname"], [name ="userEmail"] {
+.button:hover  {
+    background-color: var(--color-button-hover);
+}
+
+.input {
     
-    background-color: #F5F5F5;
-    color: #999999;
+    background-color: var(--color-input-bg);
+    color: var(--color-placeholder);
     font-size: 16px;
-    font-weight: 400;
     font-style: italic;
     padding-left: 11px;
     line-height: 21.79px;
     border-style: none;
+    outline-color: var(--color-button);
 }
 
-[name = "userCompany"] {
+.mainContent__userCompany {
     
-    background-color: #FFFFFF;
-    color: #333333;
+    background-color: var(--color-button-text);
+    color: var(--color-text);
     font-size: 16px;
     font-weight: 600;
     line-height: 21.79px;
     padding: 0 0 0 11px;
-    border-color: #F5F5F5;
-    border-width: 1px;
-    border-style: solid;
     width: 100%;
     height: 44px;
     border-radius: 5px;
-    border: 1px solid #F5F5F5;
-    background: #FFF;
-    
-
-        
+    border: 1px solid var(--color-input-bg);
+    outline-color: var(--color-button);   
 }
 
-[name ="userEmail"] {
+
+
+.mainContent__userEmail {
     width: 100%;
     height: 44px;
     border-radius: 5px;
@@ -147,17 +163,25 @@ button {
     height: 44px;    
     justify-content: center;
     column-gap: 1px;
+    
+    
 }
 
-[name ="userName"] {
-    width: calc(100% / 2 - calc(1px / 2));
+.mainContent__userName {
+   
     height: 100%;
     border-radius: 5px 0 0 5px;
 }
 
-[name ="userSurname"] {
-    width: calc(100% / 2 - calc(1px / 2));
+.mainContent__userSurname {
     height: 100%;
     border-radius:  0 5px 5px 0;
 
+}
+
+.userTerms {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    
 }
