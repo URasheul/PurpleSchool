@@ -2,58 +2,42 @@
 
 document.body.innerHTML = `<input type="text" class="input input__first">
 <input type="text" class="input input__second">
-<button class="button button__plus">+</button>
-<button class="button button__minus">-</button>
-<button class="button button__multi">*</button>
-<button class="button button__division">/</button>
+<div class="calcButtons">
+<button class="button" id = "plus">+</button>
+<button class="button" id = "minus">-</button>
+<button class="button" id = "multi">*</button>
+<button class="button" id = "division">/</button>
+</div>
 <div>Result: <span class="result"></span></div>`
+
+
 
 const firstNumber = document.querySelector('.input__first')
 const secondNumber = document.querySelector('.input__second')
+const calcButtons = document.querySelector('.calcButtons')
 const result = document.querySelector('.result')
 
-function plus(){
-  if(!firstNumber.value || !secondNumber.value) {
-    return alert('Input is incorrect')
-  }
-  result.innerText = +firstNumber.value + +secondNumber.value;
-  firstNumber.value = '';
-  secondNumber.value = '';
-
+const operations = {
+  plus : (arg1, arg2) => arg1 + arg2,
+  minus : (arg1, arg2) => arg1 - arg2,
+  multi : (arg1, arg2) => arg1 * arg2,
+  division : (arg1, arg2) => arg1 / arg2,
 }
 
-function minus(){
-  if(!firstNumber.value || !secondNumber.value) {
+
+calcButtons.onclick = function(e){
+
+  console.log(Number.isFinite(Number(firstNumber.value)));
+  console.log(Number.isFinite(Number(secondNumber.value)));
+
+  if(!firstNumber.value || !secondNumber.value || 
+    !Number.isFinite(Number(firstNumber.value)) || !Number.isFinite(Number(secondNumber.value))) {
     return alert('Input is incorrect')
   }
-  result.innerText = firstNumber.value - secondNumber.value;
+  result.innerText = operations[e.target.id](Number(firstNumber.value), Number(secondNumber.value));
+  
   firstNumber.value = '';
   secondNumber.value = '';
-}
-
-function multi(){
-  if(!firstNumber.value || !secondNumber.value) {
-    return alert('Input is incorrect')
+ 
   }
-  result.innerText = firstNumber.value * secondNumber.value;
-  firstNumber.value = '';
-  secondNumber.value = '';
-}
-
-function division(){
-  if(!firstNumber.value || !secondNumber.value) {
-    return alert('Input is incorrect')
-  }
-  result.innerText = firstNumber.value / secondNumber.value;
-  firstNumber.value = '';
-  secondNumber.value = '';
-}
-
-const plusButton = document.querySelector('.button__plus');
-const minusButton = document.querySelector('.button__minus');
-const multiButton = document.querySelector('.button__multi');
-const divisionButton = document.querySelector('.button__division');
-plusButton.addEventListener('click', plus);
-minusButton.onclick = minus;
-multiButton.onclick = multi;
-divisionButton.onclick = division;
+ 
