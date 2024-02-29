@@ -9,4 +9,7 @@ switch(language){
   break;
   case 'de' : console.log('Guten Tag');
   break;
+
+  default : console.log('Выбранный язык не поддерживается!');
+  
 }
