@@ -9,18 +9,24 @@ const Person = function(race, name, language){
     }
 } 
 
-Person.prototype.orc = {
-    weapon : 'sword',
-    kick : function(){
+const Orc = function(race, name, language, weapon){
+    Person.call(this, race, name, language)
+    this.weapon = weapon;
+    this.kick = function(){
         console.log('I kicked!')
-    }
-
+    }    
 }
 
-Person.prototype.elf = {
-    magic : 'fireball',
-    cast : function(){
-        console.log('I cast fireball!')
-    }
+Orc.prototype = Object.create(new Person);
+Orc.prototype.constructor = Orc;
 
+const Elf = function(race, name, language, magic){
+    Person.call(this, race, name, language)
+    this.magic = magic;
+    this.cast = function(){
+        console.log('I cast spell!')
+    }    
 }
+
+Elf.prototype = Object.create(new Person);
+Elf.prototype.constructor = Orc;
