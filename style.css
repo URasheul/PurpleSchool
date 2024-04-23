@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 20px 10px;
+}
+
+
+.button{
+    background-color: rgb(173, 172, 172);
+    width: 110px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button_pressed{
+    background-color: rgb(57 ,225 ,57);
+}
+
+.counter{
+    font-size: 32px;
+    font-weight: 600;
+}
