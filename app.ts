@@ -84,12 +84,19 @@ interface ErrorResponseMessage {
 }
 
 
-async function getUserData(url: DataRequest.URL) {
+type GetUsersResponse = {
+    users : ResponseData[]
+}
+
+
+
+
+async function getUserData(url: DataRequest.URL): Promise<ResponseData[] | undefined> {
     try{
-        const reuqest = await axios.get(url);
-        const response: ResponseData[] = reuqest.data.users;
+        const reuqest = await axios.get<GetUsersResponse>(url);               
+        const response = reuqest.data.users;
         console.log(response);
-        return response        
+        return response
     } catch(error: unknown){         
         if(axios.isAxiosError(error)){
             if(error.response){
