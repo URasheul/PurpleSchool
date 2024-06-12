@@ -7,16 +7,9 @@ interface IData {
 }
 
 interface IBucket{ 
-    hash: string;
-    data: IData | IData[]
-    
+    [hash: string]: Data | Data[];    
 }
 
-class Bucket implements IBucket {    
-    constructor(
-        public hash: string, 
-        public data: IData | IData[]){}
-}
 
 class Data implements IData {
     constructor(
@@ -24,114 +17,146 @@ class Data implements IData {
         public value: string){}
 }
 
-function isArray(value: IData | IData[]): value is IData[]{
+function isDataArray(value: IData | IData[]): value is IData[]{
     return Array.isArray(value);
 }
 
 
 class MapFunction {
 
-    private buckets: Bucket[] = [];
+    private buckets: IBucket[] = [];
     
     private hashFunc(key: string): string{
         return Md5.hashStr(key);
     }
 
-    private findBucket(hash: string): Bucket | undefined {
-        const requiredBucket = this.buckets.find(bucket => bucket.hash === hash);
+    private findBucket(hash: string): IBucket | undefined {
+        const requiredBucket = this.buckets.find(bucket => bucket[hash]);        
+        
         if(!requiredBucket){
             return undefined           
         }
         return requiredBucket
     }
 
-    set(value: Data): void{
-        const hash = this.hashFunc(value.key);       
-        const bucketByHash = this.findBucket(hash);
+    private createDataObject(key: unknown, value: unknown): Data{
+        let convertedKey = this.unknownToString(key);
+        let convertedValue = this.unknownToString(value);        
+        return new Data(convertedKey, convertedValue)
+    }
 
-        if(!this.buckets.length){
-            this.buckets.push(new Bucket(hash, value))
+    private unknownToString(value: unknown): string{
+        if(Array.isArray(value)){
+            return value.toString()
+        }
+        switch(typeof value){
+            case 'string':
+                return value;
+            case 'number':
+            case 'boolean':
+            case 'symbol':
+            case 'bigint':
+            case 'function':
+                return value.toString();
+            case 'object':
+                return JSON.stringify(value);
+            default :
+                throw new Error('Не удалось преобразовать значение ключа');                
+        }
 
-        } else {            
-            if(!bucketByHash){
-                this.buckets.push(new Bucket(hash, value))  
+        
+    }
 
-            } else {
-                if (isArray(bucketByHash.data)){  
-                    
-                    const element = bucketByHash.data.find(element => element.key === value.key);
-                    
-                    if(element){
-                        element.value = value.value;
-                    } else{
-                        
-                        bucketByHash.data.push(value);
-                    }
-
+    set(key: unknown, value: unknown): void{
+        try {
+            const inputData = this.createDataObject(key, value);
+            const hash = this.hashFunc(inputData.key);       
+            const bucketByHash = this.findBucket(hash);    
+            
+            if(!this.buckets.length || !bucketByHash){
+                this.buckets.push({[hash]: inputData})
+                
                 } else {
-
-                    const dataValue = bucketByHash.data; 
-                    if(dataValue.key !== value.key){
-                        bucketByHash.data = [dataValue].concat(value);
+                    let element = bucketByHash[hash];
+                    if (isDataArray(element)){  
+    
+                        const elementByKey = element.find(element => element.key === inputData.key); 
+                        
+                        if(elementByKey){
+                            elementByKey.value = inputData.value;
+                        } else{                        
+                           element.push(inputData);
+                        }
+    
                     } else {
-                        dataValue.value = value.value;                   
-                    }
-                                      
-                }  
-            }
+    
+                        if(element.key !== inputData.key){
+                            element = [element].concat(inputData);
+                        } else {
+                            element.value = inputData.value;                   
+                        }
+                                          
+                    }  
+                } 
+        } catch (error) {
+            console.log(error);            
         }
-    }
-
-    get(key: string): string | undefined{
-        const hash = this.hashFunc(key);
-        const requiredBucket = (this.findBucket(hash));
-                
-        if(requiredBucket){
-            if(isArray(requiredBucket.data)){
-                return requiredBucket.data.find(element => element.key === key)!.value;
-            } else {
-                return requiredBucket.data.value;
-            }   
-        }
-    }
-
-    delete(key: string): string{
-        const hash = this.hashFunc(key);
-        const nesessaryBucket = this.findBucket(hash);
-        if(!nesessaryBucket){
-            return `Элемент с ключом ${key} не найден`
-        } else if(isArray(nesessaryBucket.data)){
-            nesessaryBucket.data = nesessaryBucket.data.filter(element => element.key !== key);
-                return `Элемент с ключом ${key} успешно удален`
-                
-            } else {
-                this.buckets = this.buckets.filter(bucket => bucket.hash !== hash);
-                return `Элемент с ключом ${key} успешно удален`
-            }
-        
-        
-
-    }
-
-    clear(): void {
-        this.buckets = [];
         
     }
     
+
+
+    get(key: unknown): string {
+        const convertedToStringKey = this.unknownToString(key);
+        const hash = this.hashFunc(convertedToStringKey);
+        const requiredBucket = (this.findBucket(hash));
+                
+        if(requiredBucket){
+            const requiredElement = requiredBucket[hash]
+            if(isDataArray(requiredElement)){
+                return requiredElement.find(element => element.key === convertedToStringKey)?.value ?? `Элемент с ключом ${key} не найден`
+            } else {
+                return requiredElement.value ?? `Элемент с ключом ${key} не найден`
+            }   
+        }
+
+        return `Элемент с ключом ${key} не найден`
+    }
+
+    delete(key: unknown): string{
+        const convertedKey = this.unknownToString(key)
+        const hash = this.hashFunc(convertedKey);
+        const nesessaryBucket = this.findBucket(hash);
+        if(!nesessaryBucket){
+            return `Элемент с ключом ${key} не найден`
+        } else {                
+            let requiredElement = nesessaryBucket[hash];        
+            if(isDataArray(requiredElement)){
+                requiredElement = requiredElement.filter(element => element.key !== key);
+                return `Элемент с ключом ${key} успешно удален`
+                
+            } else {
+                this.buckets = this.buckets.filter(bucket => !bucket[hash]);
+                return `Элемент с ключом ${key} успешно удален`
+            }
+        
+        }
+
+    }
+
+    clear(): void {                
+        this.buckets = [];        
+    }    
+    
 }
 
-const map = new MapFunction();
-map.set({key : 'Alex', value : 'Hello Alex'});
-map.set({key : 'Alex', value : 'Hello Alex dublicate'});
-
-map.set({key : 'Alex1', value : 'Hello , i am dublicate'});
-map.set({key : 'Ben', value : 'Hello , i am dublicate'});
 
 
 
-console.log(map.delete('Alex1'))
 
-map.clear()
+
+
+
 
 
 
