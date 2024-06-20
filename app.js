@@ -5,6 +5,9 @@ const obj = {
     c: 3,
 };
 function swapKeysandValues(obj) {
-    let swapObject = Object.entries(obj).map(element => element.reverse());
-    return Object.fromEntries(swapObject);
+    let swapedObject = {};
+    for (let key in obj) {
+        swapedObject = { ...swapedObject, [obj[key]]: key };
+    }
+    return swapedObject;
 }

@@ -4,10 +4,16 @@ const obj: Record<string, number> = {
     c: 3,
 }
 
-function swapKeysandValues<T extends Record<string,number>, V extends Record<number, string>>(obj: T): V {
-    let swapObject = Object.entries(obj).map(element => element.reverse())    
-    return Object.fromEntries(swapObject);
+
+function swapKeysandValues<T extends Record<string,number>>(obj: T){
+    let swapedObject = {};
+    for(let key in obj){        
+        swapedObject = {...swapedObject, [obj[key]] : key}
+    }
+    return swapedObject
 }
+
+
 
 
 
