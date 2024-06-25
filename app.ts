@@ -6,10 +6,12 @@ const user = {
 }
 
 function pickObjectKeys<T extends Record<string, any>>(obj: T, keys: (keyof T)[]){
-    return keys.reduce((acc, rec) => {
-        return {...acc, [rec]: obj[rec]}
-    }, {})
+    const resultObject: Record<string, T[keyof T]> = {}
+    keys.forEach(item => {
+        resultObject[item as string] = obj[item]
+    })    
+    return resultObject
 }
 
-const  result = pickObjectKeys(user, ['name', 'skills']);
+const result = pickObjectKeys<typeof user>(user, ['name', 'skills']);
 
