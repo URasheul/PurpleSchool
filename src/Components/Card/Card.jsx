@@ -1,7 +1,8 @@
 import AddToFavouritesButton from '../AddToFavouritesButton/AddToFavouritesButton';
 import './Card.css';
+import { memo } from 'react';
 
-function Card({inFavourites, title, rating, poster}){
+const Card = memo(function Card({inFavourites, title, rating, poster}){
 	
 	return (
 		<div className="card">
@@ -20,6 +21,6 @@ function Card({inFavourites, title, rating, poster}){
 			</div>
 		</div>
 	);
-} 
+} );
 
 export default Card; 

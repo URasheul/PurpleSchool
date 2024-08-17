@@ -1,11 +1,12 @@
 import Button from '../Button/Button';
+import { forwardRef } from 'react';
 import './Input.css';
 
-function Input({isSearch, inputChange, clickFunc}){
+const Input = forwardRef(function Input({isSearch, inputChange, clickFunc}, ref){
 
 	if(isSearch){
 		return (
-			<div className='input-wrapper'>
+			<div className='input-wrapper' ref={ref}>
 				<img className='input-icon' src='/public/search-icon.svg' alt='поиск'></img>
 				<input type='text' className='input' placeholder='Введите название' onChange={inputChange}/>
 				<Button buttonTitle={'Искать'} onClick={clickFunc}/>
@@ -14,10 +15,9 @@ function Input({isSearch, inputChange, clickFunc}){
 	}
 	return (
 		<>
-			<input type='text' className='input input-login' placeholder='Ваше имя' onChange={inputChange}/>
-			<Button buttonTitle={'Войти в профиль'} onClick={clickFunc}/>
+			<input type='text' className='input input-login' name='name' placeholder='Ваше имя' onChange={inputChange}/>			
 		</>
 	);
-}
+});
 
 export default Input;

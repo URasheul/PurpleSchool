@@ -1,11 +1,11 @@
-
+import { forwardRef } from 'react';
 import './Button.css';
 
-function Button({buttonTitle,clickFunc}){
+const Button = forwardRef(function Button({buttonTitle,clickFunc}, ref){
 	
 	return (
-		<button className="button" onClick={clickFunc}>{buttonTitle}</button>
+		<button className="button" ref={ref} onClick={clickFunc}>{buttonTitle}</button>
 	);
-}
+});
 
 export default Button;

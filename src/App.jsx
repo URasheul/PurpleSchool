@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import Headling from './Components/Headling/Headling';
 import Input from './Components/Input/Input';
@@ -7,20 +7,48 @@ import Paragraph from './Components/Paragraph/Paragraph';
 import HeroHeader from './Components/HeroHeader/HeroHeader';
 import Hero from './Components/Hero/Hero';
 import Card from './Components/Card/Card';
+import LoginForm from './Components/LoginForm/LoginForm';
+import { UserDataContext } from './context/userData.context';
 
 function App() {
+
+	// localStorage.setItem('userData', JSON.stringify([{name : 'Вася', isLogined : false}, {name : 'Катя', isLogined : false}]));
 	
-	const [isClicked, setIsClicked] = useState(false);
-	const [inputData, setInputData] = useState();
+	const [loginedUser, setLoginedUser] = useState();
+	// const buttonRef = useRef();
+	// const [isClicked, setIsClicked] = useState(false);
+	// const [inputData, setInputData] = useState();	
+	
+	
 
-	console.log(inputData);
-	console.log(isClicked);
+	useEffect(() => {
+		const usersData = JSON.parse(localStorage.getItem('userData'));
+		if(usersData){
+			const user = usersData.find(i => i.isLogined === true);	
+			setLoginedUser(user);						
+		} else {
+			localStorage.setItem('userData', JSON.stringify([]));
+		}			
+	}, []);	
 
+	
+	const isClickFunc = useCallback(function() {
+		// setIsClicked(true);
+	}, []);	
+	
+	const inputChange = () => {
+		// setInputData(e.target.value);
+	};
+	
 	const data = [
 		{
 			title: 'Поиск',
 			text: 'Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.',
 			buttonTitle: 'Искать'			
+		},
+		{
+			title: 'Вход',			
+			buttonTitle: 'Войти в профиль'			
 		}
 	];
 	
@@ -68,17 +96,10 @@ function App() {
 	];
 
 
-	const isClickFunc = () => {
-		setIsClicked(true);
-	};	
-
-	const inputChange = (e) => {
-		setInputData(e.target.value);
-	};
-
 
 	return (
-		<>
+		
+		<UserDataContext loginedUser={loginedUser}>
 			<NavigationBar/>
 			<HeroHeader searchInput>
 				<Headling title={data[0].title}/>
@@ -88,12 +109,14 @@ function App() {
 				/>
 				<Input isSearch={true} inputChange={inputChange} clickFunc={isClickFunc}/>				
 			</HeroHeader>	
+			<LoginForm title={data[1].title} clickFunc={isClickFunc} inputChange={inputChange} buttonTitle={data[1].buttonTitle}/>	
 			<Hero>	
 				{filmDataList.map((item, index) => {
 					return <Card key={index} title={item.title} rating={item.rating} poster={item.poster}/>;
 				})}			
 			</Hero>	
-		</>
+		</UserDataContext>			
+		
 	);
 }
 
