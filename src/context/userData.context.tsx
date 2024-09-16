@@ -1,4 +1,4 @@
-import { Context, createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react';
+import { Context, createContext, Dispatch, ReactNode, SetStateAction, useContext, useEffect, useState } from 'react';
 
 
 export interface IData {
@@ -20,6 +20,10 @@ interface UserDataContextProps {
 
 export const UserContext = createContext<IContext>(null as unknown as IContext);
 
+export function useUserData() {
+	const data = useContext(UserContext);
+	return data;
+}
 
 export function UserDataContext({children, loginedUser}: UserDataContextProps) {
 	
