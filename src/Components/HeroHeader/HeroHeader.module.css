@@ -1,0 +1,13 @@
+.hero-header {
+	display: flex;
+	flex-direction: column;	
+	max-width: 50%;
+	user-select: none;
+	margin-top: 80px;
+}
+
+.hero-header_search {
+	gap: 16px;
+	margin-bottom: 80px; 
+}
+
