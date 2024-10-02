@@ -1,0 +1,14 @@
+.paragraph_20 {
+	max-width: 600px;
+	font-size: 20px;
+	line-height: 32px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.headling {
+	font-size: 48px;
+	line-height: 56px;
+	text-align: center;
+	padding-top: 20px;
+}
