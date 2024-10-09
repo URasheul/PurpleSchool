@@ -1,12 +1,15 @@
 .to-favourites-button {
 	display: flex;
 	align-items: center;
+	max-width: fit-content;
 	gap:8px;
 	color: rgb(123, 110, 246);
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 24px;
 	cursor: pointer;
+	background-color: transparent;
+	border: none;
 }
 
 .to-favourites-button:hover {

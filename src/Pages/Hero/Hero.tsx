@@ -61,7 +61,7 @@ function Main() {
 		<HeroHeader 
 		title={'Поиск'} 
 		text={'Введите название фильма, сериала или мультфильма для поиска и добавления в избранное.'}
-		searchFunc={search} 		
+		onSearch={search} 		
 		/>							
 			<Hero className={cn({[styles.error] : (movieData && movieData.searchFilmsCountResult === 0)})}>				
 				{

@@ -1,26 +1,29 @@
 import { EventHandler, SyntheticEvent } from 'react';
 import styles from  './AddToFavouritesButton.module.css';
 import { AddToFavouritesButtonProps } from './AddToFavouritesButtonProps';
+import cn from 'classnames';
 
 function AddToFavouritesButton({inFavourites=false}: AddToFavouritesButtonProps){
 
 	function select(e: SyntheticEvent) {
-		e.stopPropagation()
+		e.stopPropagation();
+		console.log('added to favourites');
+				
 	}
 
 	if(!inFavourites){
 		return (
-			<div onClick={select} className={styles['to-favourites-button']}>
+			<button onClick={select} className={cn(styles['to-favourites-button'])}>
 				<img src='/public/add-to-fav-icon.svg' alt='В избранное'/>
 				В избранное
-			</div>
+			</button>
 		);
 	} else {
 		return (
-			<div onClick={select} className={styles['to-favourites-button added-to-fav']}>
+			<button onClick={select} className={cn({[styles['to-favourites-button']]: true,  [styles['added-to-fav']]: true})}>
 				<img src='/public/added-to-fav-icon.svg' alt='В избранном'/>
 				В избранном
-			</div>
+			</button>
 		);		
 	}
 } 

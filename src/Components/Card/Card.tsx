@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Card = memo(function Card({inFavourites, title, rating, poster, id}: CardProps){	
 
 	return (
-		<Link to={`/movie/${id}`} className={styles["card"]}>
+		<Link to={`/movie/${id}`} className={styles.card}>
 			<div className={styles['card__poster']}>
 				<img className={styles['card__image']} src={poster} alt='Постер фильма'/>
 				<CardRating className={styles['card__rating']} rating={rating} />				

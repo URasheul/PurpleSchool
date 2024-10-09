@@ -5,9 +5,10 @@ import Paragraph from '../Paragraph/Paragraph';
 import styles from './HeroHeader.module.css';
 import { HeroHeaderProps } from './HeroHeaderProps';
 import { useUserData } from '../../context/userData.context';
+import cn from 'classnames';
 
 
-function HeroHeader({title, text, searchFunc}: HeroHeaderProps){
+function HeroHeader({title, text, onSearch}: HeroHeaderProps){
 
 		
 	const [inputValue, setInputvalue] = useState<string | undefined>();	
@@ -23,7 +24,7 @@ function HeroHeader({title, text, searchFunc}: HeroHeaderProps){
 	}, [])
 
 	function isClickFunc(){											
-		searchFunc(inputValue);
+		onSearch(inputValue);
 	};
 
 
@@ -35,12 +36,12 @@ function HeroHeader({title, text, searchFunc}: HeroHeaderProps){
 
 		
 		return (			
-			<div className={`${styles['hero-header']} ${styles['hero-header_search']}`}>				
+			<div className={cn({[styles['hero-header']]:true, [styles['hero-header_search']]: true})}>				
 				<Headling title={title}/>
 				<Paragraph 
 					text={text}
 					className='paragraph_16'/>
-				<Input isSearch={true} inputChange={changeInputValue} clickFunc={isClickFunc}/>
+				<Input isSearch={'search'} onChange={changeInputValue} onClick={isClickFunc}/>
 			</div>			
 		);
 
