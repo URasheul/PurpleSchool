@@ -1,0 +1,15 @@
+:root {   
+  box-sizing: border-box;
+  background: rgb(18, 24, 41);
+  background-image: url(/public/background.png);
+  backdrop-filter: blur(40px);
+  color: rgb(255, 255, 255);
+	font-family: "Poppins", sans-serif;
+  padding: 0 120px;  
+}
+
+body, p, h1, h2, h3 {
+  margin: 0;
+}
+
+
