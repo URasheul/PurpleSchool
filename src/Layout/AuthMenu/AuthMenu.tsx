@@ -8,8 +8,7 @@ import Login from "../../Pages/Login/Login";
 function AuthMenu() {	
 
 	const [loginedUser, setLoginedUser] = useState<IData>(null as unknown as IData);	
-	console.log('here');
-	
+		
 	useEffect(() => {
 		const storage = localStorage.getItem('userData');
 		if(storage){

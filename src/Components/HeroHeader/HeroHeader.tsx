@@ -15,11 +15,11 @@ function HeroHeader({title, text, onSearch}: HeroHeaderProps){
 
 	
 	
-	const context = useUserData();
+	const userDataContext = useUserData();
 	
 	useEffect(()=> {
-		if(context.searchQuery){
-			setInputvalue(context.searchQuery)
+		if(userDataContext.searchQuery){
+			setInputvalue(userDataContext.searchQuery)
 		}
 	}, [])
 
@@ -30,7 +30,7 @@ function HeroHeader({title, text, onSearch}: HeroHeaderProps){
 
 	function changeInputValue(e: SyntheticEvent) {
 		const element = e.target as HTMLInputElement;		
-		context.setSearchQuery(element.value);
+		userDataContext.setSearchQuery(element.value);
 		setInputvalue(element.value);		
 	}	
 

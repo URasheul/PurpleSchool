@@ -17,21 +17,17 @@ function Main() {
 	const [isLoading, setIsLoading] = useState<boolean>(false);	
 	
 
-	const context = useUserData();	
-
-	console.log(context);
-	console.log(userSearchInput);
-	
+	const userDataContext = useUserData();	
 
 	useEffect(() => {
-		context.setSearchQuery(userSearchInput ?? '');
+		userDataContext.setSearchQuery(userSearchInput ?? '');
 		searchMovie();
 	},[userSearchInput])
 	
 	
 	useEffect(()=>{
-		if(context.searchQuery){
-			setUserSearchInput(context.searchQuery);
+		if(userDataContext.searchQuery){
+			setUserSearchInput(userDataContext.searchQuery);
 		}
 	}, [])
 

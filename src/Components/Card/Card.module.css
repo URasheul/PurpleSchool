@@ -44,8 +44,12 @@
 }
 
 .card__title {
+	max-height: 24px;
 	color: rgb(235, 238, 245);
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 24px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;		
 }

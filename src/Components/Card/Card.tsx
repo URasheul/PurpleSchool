@@ -3,12 +3,17 @@ import styles from './Card.module.css';
 import { memo } from 'react';
 import { CardProps } from './CardProps';
 import CardRating from '../CardRating/CardRating';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Card = memo(function Card({inFavourites, title, rating, poster, id}: CardProps){	
 
+	const cardNavigate = useNavigate();
+	function onCardClick(){
+		cardNavigate(`/movie/${id}`)
+	}
+	
 	return (
-		<Link to={`/movie/${id}`} className={styles.card}>
+		<div onClick={onCardClick} className={styles.card}>
 			<div className={styles['card__poster']}>
 				<img className={styles['card__image']} src={poster} alt='Постер фильма'/>
 				<CardRating className={styles['card__rating']} rating={rating} />				
@@ -19,8 +24,9 @@ const Card = memo(function Card({inFavourites, title, rating, poster, id}: CardP
 					? <AddToFavouritesButton inFavourites/> 
 					: <AddToFavouritesButton />}			
 			</div>
-		</Link>
+		</div>
 	);
+	
 } );
 
 export default Card; 

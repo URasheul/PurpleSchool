@@ -3,6 +3,7 @@ import './NavigationBar.css';
 import { IData, UserContext } from '../../context/userData.context';
 import { IUserData } from '../LoginForm/LoginFormProps';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import cn from 'classnames';
 
 function NavigationBar(){	
 
@@ -35,10 +36,16 @@ function NavigationBar(){
 			<Link to={'/'} ><img src='/public/logo.svg' alt='логотип'/></Link>			
 			<div className='navigation-bar__menu'>
 				<NavLink to={'/'} className={({isActive}) => {
-					return isActive ? 'navigation-bar__item navigation-bar__item_active' : 'navigation-bar__item';
+					return cn({
+						'navigation-bar__item': true,
+						'navigation-bar__item_active': isActive
+					}); 
 				}}>Поиск фильмов</NavLink>
 				<NavLink to={'/favourites'} className={({isActive}) => {
-					return isActive ? 'navigation-bar__item navigation-bar__item_active' : 'navigation-bar__item';
+					return cn({
+						'navigation-bar__item': true,
+						'navigation-bar__item_active': isActive
+					}); 					
 				}}>Мои фильмы<div className='favourites-count'>{loggedUserContext?.favourites ?? 0}</div></NavLink>
 					
 				{loggedUserContext 
@@ -48,8 +55,12 @@ function NavigationBar(){
 
 				{loggedUserContext 
 					? <a href='#' className='navigation-bar__item navigation-bar__userItem' onClick={logOut}>Выйти</a> 
-					: <NavLink to={'/login'} className={({isActive}) => {
-						return isActive ? 'navigation-bar__item navigation-bar__userItem navigation-bar__item_active' : 'navigation-bar__item navigation-bar__userItem';
+					: <NavLink to={'/login'} className={({isActive}) => {						
+						return cn({
+							'navigation-bar__item' : true,
+							'navigation-bar__userItem' : true,
+							'navigation-bar__item_active' : isActive
+						});
 					}}>Войти<img src='/public/entery-icon.svg' alt='Иконка входа' /></NavLink>	
 				}				
 			</div>
