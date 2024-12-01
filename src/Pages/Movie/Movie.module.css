@@ -1,0 +1,75 @@
+.movie {
+	display: flex;
+	flex-direction: column;
+	gap: 80px;
+	margin: 50px auto;
+	max-width: 900px;
+	
+}
+
+.content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 80px;
+}
+
+.poster {
+	border-radius: 24px;
+	width: 100%;	
+}
+
+.information {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.description {
+	color: rgb(142, 149, 169);
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 32px;	
+}
+
+.rating {
+	display: flex;
+	gap: 24px;
+}
+
+.stats {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.stat-title {
+	color: rgb(118, 126, 148);	
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;	
+}
+
+.stat-title-foter {
+	margin-left: 8px;
+}
+
+.stats-value {
+	color: rgb(195, 200, 212);
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 32px;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.NEGATIVE {
+	color: #c72a2a;
+}
+
+.POSITIVE {
+	color: #31a331;
+}
