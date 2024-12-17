@@ -1,0 +1,28 @@
+
+.button {	
+	display: flex;
+	padding: 16px;	
+	background: none;
+	justify-content: center;	
+	align-items: center;	
+	border: 1px solid rgb(48, 48, 48);
+	border-radius: 40px;
+	cursor: pointer;
+}
+
+
+.clicked {
+	background: rgb(48, 48, 48);	
+}
+
+.icon {
+	stroke: var(--background);
+}
+
+.button:hover svg {
+	stroke: var(--card-button);	
+}
+
+.button:hover {
+	border-color: var(--card-button);	
+}

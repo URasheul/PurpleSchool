@@ -1,0 +1,20 @@
+
+.main {
+	display: flex;
+	min-height: 20px;
+	height: 100%;
+	gap: 2px;
+	align-items: center;
+}
+
+.text {
+	color: var(--text-light);
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 16px;
+}
+
+.icon {
+	stroke: var(--text-light);
+	transform: scale(0.75);	
+}
