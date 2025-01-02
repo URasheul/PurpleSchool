@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react";
+import { DetailsHTMLAttributes} from "react";
 
-export interface CardButtonProps extends HTMLAttributes<HTMLElement> {
-	href: string
+export interface CardButtonProps extends DetailsHTMLAttributes<HTMLElement> {
+	href: string;
 }

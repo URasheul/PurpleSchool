@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Header.module.css";
 import { HeaderProps } from "./Header.props";
 import GithubIcon from "./github-icon.svg";
-// import cn from "classnames";
+
 
 
 export function Header({title} : HeaderProps): JSX.Element {
