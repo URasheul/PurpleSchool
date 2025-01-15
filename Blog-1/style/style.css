@@ -1,0 +1,124 @@
+nav a {
+
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.09px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+body {
+    background: linear-gradient(#374151, #111827);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav input {
+    color: #FFFFFF;
+    background-color: rgba(31, 41, 55, 0.6);
+    border-radius: 100px;
+    box-sizing: border-box;
+    height: 40px;
+    width: 224px;
+    border-style: none;
+    font-size: 16px;
+    padding-left: 49px;
+    
+}
+
+nav input::placeholder {
+    color: #ABAFB5;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18.75px;
+}
+
+nav form>label>img {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    padding: 14px 17px 12px 18px;
+    position: absolute;
+
+}
+
+h1 , p {
+    color: #FFFFFF;
+}
+
+main > p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.41px;
+    opacity: 60%;
+    margin: 0 0 14px;
+}
+main h1 {
+
+    margin:0 0 30px;
+}
+
+main section address {
+    margin: 0 0 28px;
+}
+main section>img {
+    margin: 0 0 69px;
+}
+
+label.developerName {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #FFFFFF;
+    font-style: normal;
+
+}
+
+label.developer {
+    color: #ABAFB5;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 28px;
+    font-style: normal;
+
+}
+
+.link{
+    color: #FFFFFF;
+    text-decoration-line: underline;
+    
+}
+
+section>div {
+    margin: 0;
+    width: 708px;
+    text-align: center; 
+}
+
+.mainContent {
+    margin: 0 ;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+
+}
+
+.mainContent:not(.mainContent:nth-child(1)){
+   
+    font-size: 16px;
+}
+
+footer p {
+
+    color: #ABAFB5;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: center;
+    
+}
+
