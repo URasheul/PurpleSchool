@@ -1,0 +1,22 @@
+
+.paragraph {	
+	color: var(--text-light);
+	font-weight: 400;
+}
+
+.small {	
+	font-size: 14px;	
+	line-height: 21px;
+	overflow: hidden;	
+}
+
+.medium {
+	font-size: 16px;	
+	line-height: 28px;
+	color: var(--text-medium);
+}
+
+.large {
+	font-size: 18px;	
+	line-height: 32px;
+}

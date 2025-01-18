@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 8px 36px ;
+}
+
+
+:root {
+ 
+  --background: #ffffff; 
+  --text:#2C2C2C;
+  --text-medium:#4B4B4B;
+  --text-light:#6E6E6E; 
+  
+  --button:#303030;
+  --card-button: #1473E6;
+  --card-button-hover: #0b53ac;
+  --card-cover-background: #E5F4FF;
+
+}
+
+ 
+

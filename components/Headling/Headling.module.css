@@ -1,0 +1,20 @@
+
+.headling {
+	color:var(--text);	
+	font-weight: 700;
+}
+
+.large {	
+	font-size: 34px;	
+	line-height: 46px;
+}
+
+.medium {	
+	font-size: 28px;	
+	line-height: 38px;
+}
+
+.small {	
+	font-size: 18px;	
+	line-height: 25px;
+}
