@@ -1,6 +1,6 @@
+import LikeIcon from "@/public/like-icon.svg";
 import { LikeTagProps } from './LikeTag.props';
 import styles from "./LikeTag.module.css";
-import LikeIcon from "@/public/like-icon.svg";
 
 
 export function LikeTag({ likeCount} : LikeTagProps): JSX.Element {

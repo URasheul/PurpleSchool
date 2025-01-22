@@ -1,20 +1,50 @@
 {
   "root": true,
   "extends": [
-    "next/core-web-vitals",
-   "next/typescript",
+    "next/typescript",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint/eslint-plugin"],
+  "plugins": ["@typescript-eslint/eslint-plugin",
+  "eslint-plugin-import"
+],
   "rules": {
+    "import/no-unresolved": ["error", { "commonjs": true, "amd": true }],
+    "import/named": "error",
+    "import/namespace": "error",
+    "import/default": "error",
+    "import/export": "error",
     "semi":"off",
     "@typescript-eslint/semi": [
       "off"
     ],
     "@typescript-eslint/no-empty-object-type": ["error",      
     {"allowInterfaces" : "with-single-extends"}      
+    ],
+    "sort-imports":[2, { 
+      "allowSeparatedGroups": true ,
+        "ignoreCase": true, 
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+      }
+    ],
+    "import/order": 
+    [
+    1, 
+    { "groups": 
+        [
+          "external", 
+          "builtin", 
+          "internal", 
+          "sibling", 
+          "parent", 
+          "index"
+        ]
+    } 
     ]    
   }
 }

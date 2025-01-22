@@ -1,11 +1,11 @@
 import Image from "next/image";
+import styles from "./Card.module.css";
+import { CardProps } from "./Card.props";
 import { CardButton } from "../CardButton/CardButton";
 import { Headling } from "../Headling/Headling";
 import { LikeTag } from "../LikeTag/LikeTag";
 import { Paragraph } from "../Paragraph/Paragraph";
 import { Tag } from "../Tag/Tag";
-import styles from "./Card.module.css";
-import { CardProps } from "./Card.props";
 
 
 export function Card({image, title, likesCount, themeTag, text, publicationTime, duration, postId} : CardProps): JSX.Element {

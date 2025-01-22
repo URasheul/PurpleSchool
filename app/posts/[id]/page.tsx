@@ -1,13 +1,19 @@
-import { getPostById, getPosts } from "@/api/AddLikeFunction"
-import { IPost } from "@/interfaces/Post.interface";
 import { Metadata } from "next";
 
+import { JsonPlaceholderClient } from "@/api/ApiClient";
+import { LikeButton } from "@/components";
+
+
+
+const apiHandler = new JsonPlaceholderClient();
 
 export async function generateStaticParams() {
-	const posts = await getPosts();
-	return posts.filter(post => post.id < 10).map((post) => {		
-			return { id : post.id.toString()}				
-	});
+	const posts = await apiHandler.getPosts();
+	if(posts) {
+		return posts.filter(post => post.id < 10).map((post) => {		
+				return { id : post.id.toString()}				
+		});
+	}
 }
 
 
@@ -16,11 +22,16 @@ export const metadata: Metadata = {
 }
 
 
-export default async function Posts({params} : {params : Promise<{ id : string}>}) {
+export default async function Post({params} : {params : Promise<{ id : string}>}) {
 	const { id } = await params
-	const post : IPost = await getPostById(+id);
-
-	return (
-		<div>POST TITLE: {post.title}</div>
-	)
+	const post = await apiHandler.getPostById(+id);
+	
+	if(post) {
+		return (
+			<>
+			<div>POST TITLE: {post.title}</div>			
+			<LikeButton postId={+id}/>			
+			</>
+		)
+	}		
 }

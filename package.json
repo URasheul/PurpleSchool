@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint-fix": "next lint --fix",    
     "kill": "lsof -i :3000 -t >/dev/null && lsof -i :3000 -t | xargs kill"
   },
   "dependencies": {
@@ -25,6 +26,7 @@
     "@typescript-eslint/parser": "^8.17.0",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
+    "eslint-plugin-import": "^2.31.0",
     "typescript": "^5"
   }
 }

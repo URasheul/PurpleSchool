@@ -1,20 +1,22 @@
 "use client"
 
-import { LikeButtonProps } from './LikeButton.props';
-import styles from "./LikeButton.module.css";
-import LikeIcon from "@/public/like-icon.svg";
 import cn from "classnames";
 import { useState } from 'react';
+import LikeIcon from "@/public/like-icon.svg";
+import { JsonPlaceholderClient } from '@/api/ApiClient';
+import styles from "./LikeButton.module.css";
+import { LikeButtonProps } from './LikeButton.props';
 
+const apiHandler = new JsonPlaceholderClient();
 
-export function LikeButton({isClicked = false, onLikeClick} : LikeButtonProps): JSX.Element {
+export function LikeButton({isClicked = false, postId} : LikeButtonProps): JSX.Element {
 
 	const [isLiked, setIsLiked] = useState<boolean>(isClicked);
 	
 
 	const likeClick = () => {
 		setIsLiked(!isLiked);
-		onLikeClick(1, isLiked);
+		apiHandler.LikeHandler(postId, isLiked);
 	};
  
 	return (

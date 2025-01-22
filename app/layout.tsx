@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
+
+import type { Metadata } from "next";
 import {Open_Sans} from "next/font/google";
+
 import cn from 'classnames';
-import { Header } from "@/components";
 import AppContext from "@/context/AppContext";
+import { Header } from "@/components";
 
 const OpenSans = Open_Sans({
   subsets: ["latin"],

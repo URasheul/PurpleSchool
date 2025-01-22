@@ -1,7 +1,7 @@
 
 import { Card } from "@/components";
 import styles from "./page.module.css";
-import { getPosts } from "@/api/AddLikeFunction";
+import JsonPlaceholderClient from "../api/ApiClient";
 
 
 export default async function Home() {

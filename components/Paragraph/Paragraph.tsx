@@ -1,6 +1,6 @@
+import cn from "classnames";
 import styles from "./Paragraph.module.css";
 import { ParagraphProps } from "./Paragraph.props";
-import cn from "classnames";
 
 export function Paragraph({children, size, className}: ParagraphProps): JSX.Element {
 
