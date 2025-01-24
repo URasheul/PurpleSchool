@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
-import { JsonPlaceholderClient } from "@/api/ApiClient";
+import { apiHandler } from "@/api/ApiClient";
 import { LikeButton } from "@/components";
 
 
 
-const apiHandler = new JsonPlaceholderClient();
+
 
 export async function generateStaticParams() {
 	const posts = await apiHandler.getPosts();

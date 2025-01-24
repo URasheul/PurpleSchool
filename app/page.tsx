@@ -1,12 +1,13 @@
 
 import { Card } from "@/components";
 import styles from "./page.module.css";
-import JsonPlaceholderClient from "../api/ApiClient";
+
+import {apiHandler} from "../api/ApiClient";
 
 
 export default async function Home() {
 
-  const data = await getPosts();
+  const data = await apiHandler.getPosts();
 
   return (      
     <div className={styles.main}>

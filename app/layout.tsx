@@ -1,9 +1,11 @@
 import "./globals.css";
 
+
 import type { Metadata } from "next";
 import {Open_Sans} from "next/font/google";
 
 import cn from 'classnames';
+
 import AppContext from "@/context/AppContext";
 import { Header } from "@/components";
 

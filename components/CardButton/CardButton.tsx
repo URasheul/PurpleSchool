@@ -1,7 +1,8 @@
 import Link from "next/link";
+
 import ArrowIcon from "@/public/arrow-icon.svg";
-import styles from "./CardButton.module.css"
 import { CardButtonProps } from "./CardButton.props";
+import styles from "./CardButton.module.css"
 
 
 

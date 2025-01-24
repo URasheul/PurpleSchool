@@ -2,12 +2,14 @@
 
 import cn from "classnames";
 import { useState } from 'react';
-import LikeIcon from "@/public/like-icon.svg";
-import { JsonPlaceholderClient } from '@/api/ApiClient';
-import styles from "./LikeButton.module.css";
-import { LikeButtonProps } from './LikeButton.props';
 
-const apiHandler = new JsonPlaceholderClient();
+import LikeIcon from "@/public/like-icon.svg";
+
+import { apiHandler} from '@/api/ApiClient';
+import { LikeButtonProps } from './LikeButton.props';
+import styles from "./LikeButton.module.css";
+
+
 
 export function LikeButton({isClicked = false, postId} : LikeButtonProps): JSX.Element {
 

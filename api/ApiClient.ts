@@ -1,7 +1,8 @@
 import axios, { isAxiosError } from "axios";
 import { IPost } from "@/interfaces/Post.interface";
 
-export class JsonPlaceholderClient {
+
+class JsonPlaceholderClient {
 
 	async getPosts() {
 		try {
@@ -46,5 +47,7 @@ export class JsonPlaceholderClient {
 		}		
 	}
 }
+
+export const apiHandler = new JsonPlaceholderClient();
 
 
