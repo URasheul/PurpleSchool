@@ -1,10 +1,14 @@
 
+
 import { Card } from "@/components";
+
 
 
 export default function Home() {
 
+
   return (     
+
       <Card 
       image={'/cover.png'} 
       title={"Как работать с CSS Grid"}
@@ -13,6 +17,8 @@ export default function Home() {
       text={"Грид-раскладка (CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы.."}
       publicationTime={"1 месяц назад"}
       duration={"3 минуты"}      
+
       />      
+
   );
 }

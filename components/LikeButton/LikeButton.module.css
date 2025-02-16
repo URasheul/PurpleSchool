@@ -8,12 +8,14 @@
 	border: 1px solid rgb(48, 48, 48);
 	border-radius: 40px;
 	cursor: pointer;
+
 }
 
 
 .clicked {
 	background: rgb(48, 48, 48);	
 }
+
 
 .icon {
 	stroke: var(--background);
@@ -25,4 +27,5 @@
 
 .button:hover {
 	border-color: var(--card-button);	
+
 }
