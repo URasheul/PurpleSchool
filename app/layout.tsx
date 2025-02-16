@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {Open_Sans} from "next/font/google";
-import cn from 'classnames';
-import { Header } from "@/components";
+
 
 const OpenSans = Open_Sans({
   subsets: ["latin"],
@@ -21,8 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={cn(OpenSans.className)}>
-        <Header title={"Perfect BLOG"}/>
+
+      <body className={OpenSans.className}>
+
         {children}
       </body>
     </html>

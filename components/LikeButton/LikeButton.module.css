@@ -8,24 +8,24 @@
 	border: 1px solid rgb(48, 48, 48);
 	border-radius: 40px;
 	cursor: pointer;
-	transition: box-shadow .4s;
+
 }
 
 
 .clicked {
 	background: rgb(48, 48, 48);	
 }
-.clicked svg {	
-	stroke: var(--background);
-	
-}
+
 
 .icon {
 	stroke: var(--background);
 }
 
+.button:hover svg {
+	stroke: var(--card-button);	
+}
 
 .button:hover {
-	
-	box-shadow: 0 0 10px 2px #1473E6;
+	border-color: var(--card-button);	
+
 }
