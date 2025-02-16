@@ -1,7 +1,8 @@
 import Image from "next/image";
 import styles from "./Card.module.css";
-import { CardProps } from "./Card.props";
+
 import { CardButton } from "../CardButton/CardButton";
+import { CardProps } from "./Card.props";
 import { Headling } from "../Headling/Headling";
 import { LikeTag } from "../LikeTag/LikeTag";
 import { Paragraph } from "../Paragraph/Paragraph";
