@@ -1,11 +1,12 @@
 'use client'
-
 import Link from "next/link";
 import { useContext } from "react";
+
 import  { Context } from "@/context/AppContext";
 import styles from "./Header.module.css";
-import { HeaderProps } from "./Header.props";
+
 import GithubIcon from "./github-icon.svg";
+import { HeaderProps } from "./Header.props";
 
 
 

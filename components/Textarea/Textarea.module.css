@@ -1,0 +1,19 @@
+
+.textarea {	
+	color: var(--text);
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 140%;
+	border: 1px solid var(--border);
+	border-radius: 8px;	
+	padding: 18px 30px;
+	resize: none;
+	margin-bottom: 9px;
+	font-family: 'Open Sans', 'Open Sans Fallback';
+	width: 100%;
+}
+
+.textarea::placeholder{
+	font-size: 15px;
+	color: var(--placeholder);
+}

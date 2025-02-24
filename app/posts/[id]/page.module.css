@@ -1,0 +1,12 @@
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}

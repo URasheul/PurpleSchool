@@ -1,6 +1,7 @@
 import cn from "classnames";
-import styles from "./Headling.module.css";
+
 import { HeadlingProps } from "./Headling.props";
+import styles from "./Headling.module.css";
 
 
 export function Headling({size="l", children} : HeadlingProps): JSX.Element {

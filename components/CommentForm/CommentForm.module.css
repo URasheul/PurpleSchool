@@ -1,0 +1,33 @@
+
+.form {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	max-width: 650px;
+}
+
+.formError {
+	gap: 5px;
+}
+
+.submit {	
+	align-self: flex-start;
+}
+
+.errorText {	
+	color: var(--error-text);
+	padding-left: 10px;
+}
+
+.errorName {
+	margin-bottom: 10px;
+}
+
+.errorComment {
+	margin-bottom: 19px;
+}
+
+.error {
+	background-color: var(--error);	
+}

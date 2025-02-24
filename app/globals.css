@@ -5,7 +5,7 @@
 }
 
 body {
-  padding: 8px 36px ;
+  padding: 8px 36px 50px ;
 }
 
 
@@ -15,8 +15,13 @@ body {
   --text:#2C2C2C;
   --text-medium:#4B4B4B;
   --text-light:#6E6E6E; 
+  --placeholder: #4E5D7C80;
+  --border: #28282829;
+  --error: #ff87878f;
+  --error-text: #ff5555;
   
   --button:#303030;
+  --button-hover:#414141;
   --card-button: #1473E6;
   --card-button-hover: #0b53ac;
   --card-cover-background: #E5F4FF;

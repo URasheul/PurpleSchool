@@ -1,5 +1,6 @@
 import axios, { isAxiosError } from "axios";
-import { IPost } from "@/interfaces/Post.interface";
+import { IComment, IPost } from "@/interfaces/Post.interface";
+import { headers } from "next/headers";
 
 
 class JsonPlaceholderClient {
@@ -24,6 +25,34 @@ class JsonPlaceholderClient {
 			if(isAxiosError(error)) {
 				console.error(error.message)
 			}			
+		}
+	}
+
+	async getComments(id: number) {
+		try {		
+			const {data} = await axios.get<IComment[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`);
+			return data;
+		} catch(error) {		
+			if(isAxiosError(error)) {
+				console.error(error.message)
+			}			
+		}
+	}
+
+	async postComment(id: number, name:string, comment: string) {
+		try {		
+			const {data} = await axios.patch(`https://jsonplaceholder.typicode.com/posts/${id}`, 
+			{
+				name,
+				comment												
+			}
+			);	
+			return data;
+
+		} catch(error) {		
+			if(isAxiosError(error)) {		
+				console.error(error.message)				
+			}					
 		}
 	}
 
