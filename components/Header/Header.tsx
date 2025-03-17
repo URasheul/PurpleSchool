@@ -17,9 +17,11 @@ export function Header({title} : HeaderProps): JSX.Element {
 
 	return (		
 			<header className={styles.header}>
-				<h1 className={styles.title}>{title}</h1>
-				<Link target="_blank" href={href || ''} className={styles.gitIcon}>
-				<GithubIcon/>
+				<Link role="link" href={'/'} className={styles.link}>
+					<h1 className={styles.title}>{title}</h1>
+				</Link>
+				<Link role="link" aria-label="Ссылка на гитхаб" target="_blank" href={href || ''} className={styles.gitIcon}>
+					<GithubIcon/>
 				</Link>
 			</header>		
 	);

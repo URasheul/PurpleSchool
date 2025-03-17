@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import styles from "./Card.module.css";
 
@@ -11,8 +12,11 @@ import { Tag } from "../Tag/Tag";
 
 
 export function Card({image, title, likesCount, themeTag, text, publicationTime, duration, postId} : CardProps): JSX.Element {
+
+
 	return (
-		<div className={styles.cardWrapper}>
+		<div 			
+		className={styles.cardWrapper}>
 			<div className={styles.card}>
 				<div className={styles.cover}>	
 						<Image 

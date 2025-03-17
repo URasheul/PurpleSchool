@@ -31,14 +31,13 @@ export function CommentForm({ id }:CommentFormProps) {
 	const commentError= formState.errors.comment;		
 
 	return (		
-		<Form onSubmit={handleSubmit(submitForm)} action={''} className={cn(styles.form, {[styles.formError]:commentError || nameError})}>	
-						
-				{nameError && <span className={cn(styles.errorText)}>{nameError.message}</span>}			
-				<Input {...register("name", {required: {value: true, message: 'Заполните имя'}})} 
+		<Form onSubmit={handleSubmit(submitForm)} action={''} className={cn(styles.form, {[styles.formError]:commentError || nameError})}>						
+				{nameError && <span role="alert" className={cn(styles.errorText)}>{nameError.message}</span>}			
+				<Input aria-label="Введите имя" {...register("name", {required: {value: true, message: 'Заполните имя'}})} 
 				placeholder="Имя" 
 				className={cn({[styles.error] : nameError, [styles.errorName]: nameError && !commentError})}/>
-				{commentError && <span className={cn(styles.errorText)}>{commentError.message}</span>}			
-				<Textarea {...register("comment", {required: {value: true, message: 'Введите комментарий'}})} 
+				{commentError && <span role="alert" className={cn(styles.errorText)}>{commentError.message}</span>}			
+				<Textarea aria-label="Введите комментарий" {...register("comment", {required: {value: true, message: 'Введите комментарий'}})} 
 				className={cn({[styles.error] : commentError, [styles.errorComment]: nameError && !commentError})} placeholder="Комментарий"/>
 			<Button className={styles.submit}>Отправить</Button>			
 		</Form>		

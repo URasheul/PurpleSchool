@@ -22,7 +22,7 @@ export function LikeButton({isClicked = false, postId} : LikeButtonProps): JSX.E
 	};
  
 	return (
-		<button className={cn(styles.button, {[styles.clicked] : isLiked})} onClick={likeClick}>			
+		<button aria-label="Поставить лайк" className={cn(styles.button, {[styles.clicked] : isLiked})} onClick={likeClick}>			
 			<LikeIcon className={cn({[styles.icon] : isLiked})}/>
 		</button>
 	)

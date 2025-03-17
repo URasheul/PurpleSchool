@@ -1,6 +1,6 @@
 import axios, { isAxiosError } from "axios";
 import { IComment, IPost } from "@/interfaces/Post.interface";
-import { headers } from "next/headers";
+
 
 
 class JsonPlaceholderClient {
