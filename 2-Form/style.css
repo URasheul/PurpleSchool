@@ -1,0 +1,67 @@
+h1 {
+    color: #333333;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 49.03px;
+}
+
+p {
+    color: #666666;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.51px;
+}
+
+#enterRef{
+    color: #089FE0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.51px;
+
+}
+
+#checkTermsRef {
+    color: #089FE0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.07px;
+}
+
+label {
+
+    color: #666666;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.07px;
+}
+
+button {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.51px;
+    background-color: #089FE0;
+    border-style: hidden;
+}
+
+[name ="userName"],[name ="userSurname"], [name ="userEmail"] {
+    background-color: #F5F5F5;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 21.79px;
+    border-style: hidden;
+}
+
+[name = "userCompany"] {
+    background-color: #FFFFFF;
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 21.79px;
+    border-color: #F5F5F5;
+    border-width: 1px;
+    border-style: solid;
+        
+}
